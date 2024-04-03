@@ -1,0 +1,44 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - suggest_restaurants
+  - thanks
+  - bot_challenge
+
+responses:
+  utter_greet:
+  - text: "Hello! How Can I help you?"
+
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_suggest_restaurants:
+  - text: "Here are some {cuisine_type} restaurants you might like: {restaurants_name}"
+
+  utter_goodbye:
+  - text: "Goodbye, Enjoy your meal!"
+
+  utter_welcome:
+  - text: "With pleasure!"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+entities:
+  - cuisine_type
+actions:
+  - action_suggest_restaurants
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
